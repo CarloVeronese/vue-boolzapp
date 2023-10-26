@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="contacts-list flex-grow-1">
-                            <div class="contact-preview" v-for="contact in contacts">
+                            <div class="contact-preview" v-for="(contact, index) in contacts" :class="index == activeContactIndex ? 'active' : '' " @click="changeActiveContact(index)">
                                 <img :src="contact.avatar" alt="" class="contact-picture">
                                 <div class="contact-text flex-grow-1">
                                     <h3 class="contact-name">{{ contact.name }}</h3>
@@ -58,9 +58,9 @@
                     </div>
                     <div class="active-contact flex-grow-1">
                         <div class="active-contact-info bg-l-grey">
-                            <img src="./img/avatar_1.jpg" alt="" class="active-contact-picture">
+                            <img :src="contacts[activeContactIndex].avatar" alt="" class="active-contact-picture">
                             <div class="active-contact-text flex-grow-1">
-                                <h3 class="active-contact-name">Michele</h3>
+                                <h3 class="active-contact-name">{{ contacts[activeContactIndex].name }}</h3>
                                 <p class="access-last">Ultimo accesso oggi alle 12:00</p>
                             </div>
                             <i class="fa-solid fa-magnifying-glass"></i>

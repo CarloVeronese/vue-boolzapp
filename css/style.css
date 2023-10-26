@@ -169,7 +169,7 @@ i {
     cursor: pointer;
 }
 
-.contact-preview .active {
+.active {
     background-color: var(--active-grey);
 }
 
