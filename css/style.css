@@ -164,6 +164,13 @@ i {
     display: flex;
     padding: 6px;
     gap: 10px;
+    height: 50px;
+    border-bottom: 1px solid rgba(234, 234, 234, 0.4);
+    cursor: pointer;
+}
+
+.contact-preview .active {
+    background-color: var(--active-grey);
 }
 
 .contact-picture {
@@ -305,6 +312,7 @@ input::placeholder {
     --lime-green: #D5F9BA;
     --light-brown: #F3EEEA;
     --dark-grey: #6B7376;
+    --active-grey: #E9EBEB;
 }
 
 /* DEBUG */

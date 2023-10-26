@@ -44,10 +44,10 @@
                             </div>
                         </div>
                         <div class="contacts-list flex-grow-1">
-                            <div class="contact-preview">
-                                <img src="./img/avatar_1.jpg" alt="" class="contact-picture">
+                            <div class="contact-preview" v-for="contact in contacts">
+                                <img :src="contact.avatar" alt="" class="contact-picture">
                                 <div class="contact-text flex-grow-1">
-                                    <h3 class="contact-name">Michele</h3>
+                                    <h3 class="contact-name">{{ contact.name }}</h3>
                                     <p>Ultimo messaggio inviato</p>
                                 </div>
                                 <div class="last-text">
