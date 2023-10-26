@@ -1,7 +1,15 @@
+/* DEFAULT */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+img {
+    width: 35px;
+    display: block;
+    border-radius: 50%;
 }
 
 .container {
@@ -66,14 +74,22 @@
     height: 100vh;
 }
 
-.bg-top {
+.page::before {
+    content: '';
     background-color: var(--dark-green);
     height: 95px;
 }
 
-.bg-main {
+.page::after {
+    content: '';
     background-color: var(--grey);
     flex-grow: 1;
+}
+
+/* UTILITIES */
+
+.bg-l-grey{
+    background-color: var(--light-grey);
 }
 
 /* PALETTE */
@@ -81,6 +97,7 @@
 :root {
     --grey: #D8DBD5;
     --dark-green: #009688;
+    --light-grey: #EAEAEA;
 }
 
 /* DEBUG */
