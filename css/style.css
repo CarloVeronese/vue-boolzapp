@@ -158,6 +158,9 @@ i {
     font-size: 12px;
 }
 
+.hide {
+    display: none;
+}
 /* CONTACTS LIST*/
 
 .contact-preview {

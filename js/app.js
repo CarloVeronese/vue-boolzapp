@@ -165,12 +165,16 @@ createApp({
                     ],
                 }
             ],
-            activeContactIndex: 0
+            activeContactIndex: 0,
+            searchString: ''
         }
     },
     methods: {
         changeActiveContact(index) {
             this.activeContactIndex = index
+        },
+        stringLowerCaseAndTrimmed(word){
+            return word.toLowerCase().trim()
         }
     }
 }).mount('#app')

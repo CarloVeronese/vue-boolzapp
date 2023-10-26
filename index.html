@@ -39,12 +39,11 @@
                         <div class="search-bar-container">
                             <div class="search-bar">
                                 <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat" class="flex-grow-1">
-                        
+                                <input type="text" placeholder="Cerca o inizia una nuova chat" class="flex-grow-1" v-model="searchString">
                             </div>
                         </div>
                         <div class="contacts-list flex-grow-1">
-                            <div class="contact-preview" v-for="(contact, index) in contacts" :class="index == activeContactIndex ? 'active' : '' " @click="changeActiveContact(index)">
+                            <div v-for="(contact, index) in contacts" :class=" [ index == activeContactIndex ? 'active' : '', stringLowerCaseAndTrimmed(contact.name).includes(stringLowerCaseAndTrimmed(searchString)) ? 'contact-preview' : 'hide' ]" @click="changeActiveContact(index, '    Mario ross ')">
                                 <img :src="contact.avatar" alt="" class="contact-picture">
                                 <div class="contact-text flex-grow-1">
                                     <h3 class="contact-name">{{ contact.name }}</h3>
@@ -68,7 +67,11 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
                         <div class="active-contact-chat flex-grow-1">
-                            <div class="chat-text sent">
+                            <div class="chat-text" v-for="text in contacts[activeContactIndex].messages" :class=" text.status == 'sent' ? 'sent' : 'received' ">
+                                <span class="text-content">{{ text.message }}</span>
+                                <span class="text-time">{{ text.date }}</span>
+                            </div>
+                            <!-- <div class="chat-text sent">
                                 <span class="text-content">Hai portato a spasso il cane?</span>
                                 <span class="text-time">15:30</span>
                             </div>
@@ -79,7 +82,7 @@
                             <div class="chat-text">
                                 <span class="text-content">Tutto fatto!</span>
                                 <span class="text-time">17:15</span>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="send-text-bar">
                             <i class="fa-regular fa-face-smile"></i>
