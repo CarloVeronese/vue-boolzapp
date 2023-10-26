@@ -88,11 +88,12 @@ img {
 
 .user-name,
 .active-contact-name {
-    font-size: 15px;
+    font-size: 10px;
     font-weight: 400;
 }
 
-i {
+.user i,
+.active-contact-info i {
     color: var(--icon-grey);
 }
 
@@ -169,9 +170,9 @@ i {
     width: 38px;
 }
 
-.contact-text h3 {
+.contact-name {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .contact-text p {
@@ -193,7 +194,7 @@ i {
 }
 
 .access-last {
-    font-size: 10px;
+    font-size: 9px;
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -235,7 +236,30 @@ i {
 
 /* SEND TEXT */
 
-.send-input
+.send-text-bar {
+    background-color: var(--light-brown);
+    padding: 6px 24px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.send-text-input {
+    line-height: 32px;
+    border: 0;
+    border-radius: 2px;
+    padding: 0 5px;
+}
+
+input::placeholder {
+    font-size: 10px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.send-text-bar i {
+    font-size: 18px;
+    color: var(--dark-grey);
+}
 
 /* BACKGROUND*/
 
@@ -280,6 +304,7 @@ i {
     --text-grey: #D4D8E1;
     --lime-green: #D5F9BA;
     --light-brown: #F3EEEA;
+    --dark-grey: #6B7376;
 }
 
 /* DEBUG */
