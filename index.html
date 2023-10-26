@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootzapp</title>
     <link rel="stylesheet" href="./css/style.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/797d614b47.js" crossorigin="anonymous"></script>
 </head>
 <body class="debugg">
     <div id="app">
@@ -15,8 +22,20 @@
                     <div class="contacts">
                         <div class="user bg-l-grey">
                             <img src="./img/avatar_io.jpg" alt="" class="user-picture">
+                            <span class="user-name">Sofia</span>
+                            <i class="fa-solid fa-circle-notch"></i>
+                            <i class="fa-solid fa-message"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
-                        <div class="notifications"></div>
+                        <div class="notifications">
+                            <div class="notifications-off">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="notifications-text">
+                                <h4>Ricevi notifiche di nuovi messaggi</h4>
+                                <span>Attiva notifiche desktop</span>
+                            </div>
+                        </div>
                         <div class="search-bar"></div>
                         <div class="contacts-list"></div>
                     </div>
