@@ -12,21 +12,53 @@
     bottom: 1.5%;
     right: calc((100% - 1000px) / 2);
     left: calc((100% - 1000px) / 2);
+    display: flex;
 }
 
 .row {
     display: flex;
+    flex-basis: 100%;
 }
 
 .contacts {
     flex-basis: 35%;
+    display: flex;
+    flex-direction: column;
 }
 
-.chat {
+.active-contact {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* MAIN PAGE */
+
+.user,  
+.active-contact-info,
+.send-input {
+    flex-basis: 45px;
+}
+
+.notifications {
+    flex-basis: 53px;
+}
+
+.search-bar {
+    flex-basis: 30px;
+}
+
+.contacts-list {
     flex-grow: 1;
 }
 
-.page{
+.active-contact-chat {
+    flex-grow: 1;
+}
+
+/* BACKGROUND*/
+
+.page {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -34,12 +66,12 @@
     height: 100vh;
 }
 
-.bg-top{
+.bg-top {
     background-color: var(--dark-green);
     height: 95px;
 }
 
-.bg-main{
+.bg-main {
     background-color: var(--grey);
     flex-grow: 1;
 }
