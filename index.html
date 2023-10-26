@@ -22,7 +22,7 @@
                     <div class="contacts">
                         <div class="user bg-l-grey">
                             <img src="./img/avatar_io.jpg" alt="" class="user-picture">
-                            <span class="user-name">Sofia</span>
+                            <h3 class="user-name flex-grow-1">Sofia</h3>
                             <i class="fa-solid fa-circle-notch"></i>
                             <i class="fa-solid fa-message"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -39,15 +39,36 @@
                         <div class="search-bar-container">
                             <div class="search-bar">
                                 <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                <input type="text" placeholder="Cerca o inizia una nuova chat" class="flex-grow-1">
                         
                             </div>
                         </div>
-                        <div class="contacts-list"></div>
+                        <div class="contacts-list flex-grow-1">
+                            <div class="contact-preview">
+                                <img src="./img/avatar_1.jpg" alt="" class="contact-picture">
+                                <div class="contact-text flex-grow-1">
+                                    <h3>Michele</h3>
+                                    <p>Ultimo messaggio inviato</p>
+                                </div>
+                                <div class="last-text">
+                                    12:00   
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="active-contact">
-                        <div class="active-contact-info bg-l-grey"></div>
-                        <div class="active-contact-chat"></div>
+                    <div class="active-contact flex-grow-1">
+                        <div class="active-contact-info bg-l-grey">
+                            <img src="./img/avatar_1.jpg" alt="" class="active-contact-picture">
+                            <div class="active-contact-text flex-grow-1">
+                                <h3 class="active-contact-name">Michele</h3>
+                                <p class="access-last">Ultimo accesso oggi alle 12:00</p>
+                            </div>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                        </div>
+                        <div class="active-contact-chat flex-grow-1">
+                        </div>
                         <div class="send-input"></div>
                     </div>
                 </div>
