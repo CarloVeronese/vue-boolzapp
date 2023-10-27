@@ -93,7 +93,8 @@ img {
 }
 
 .user i,
-.active-contact-info i {
+.active-contact-info i,
+.open-text-info {
     color: var(--icon-grey);
 }
 
@@ -187,13 +188,13 @@ i {
 
 .contact-text p {
     font-size: 10px;
-    color: var(--text-grey);
+    color: var(--icon-grey);
 }
 
 .last-text,
 .text-time{
-    color: var(--text-grey);
-    font-size: 8px;
+    color: var(--icon-grey);
+    font-size: 6px;
 }
 
 /* ACTIVE CONTACT */
@@ -229,7 +230,8 @@ i {
     position: relative;
 }
 
-.text-content{
+.text-content,
+.text-info {
     font-size: 10px;
 }
 
@@ -242,6 +244,30 @@ i {
     position: absolute;
     bottom: 4px;
     right: 3px;
+}
+
+.open-text-info {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.text-info{
+    position: absolute;
+    top: 75%;
+    background-color: white;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    z-index: 1;
+}
+
+.text-info * {
+    cursor: pointer;
 }
 
 /* SEND TEXT */
@@ -301,6 +327,10 @@ input::placeholder {
 
 .flex-grow-1 {
     flex-grow: 1;
+}
+
+.scroll-bar-y {
+    overflow-y: scroll;
 }
 
 /* PALETTE */

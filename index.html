@@ -42,16 +42,14 @@
                                 <input type="text" placeholder="Cerca o inizia una nuova chat" class="flex-grow-1" v-model="searchString">
                             </div>
                         </div>
-                        <div class="contacts-list flex-grow-1">
-                            <div v-for="(contact, index) in contacts" :class=" [ index == activeContactIndex ? 'active' : '', stringLowerCaseAndTrimmed(contact.name).includes(stringLowerCaseAndTrimmed(searchString)) ? 'contact-preview' : 'hide' ]" @click="changeActiveContact(index, '    Mario ross ')">
+                        <div class="contacts-list flex-grow-1 scroll-bar-y">
+                            <div v-for="(contact, index) in contacts" :class=" [ index == activeContactIndex ? 'active' : '', stringLowerCaseAndTrimmed(contact.name).includes(stringLowerCaseAndTrimmed(searchString)) ? 'contact-preview' : 'hide' ]" @click="changeActiveContact(index)">
                                 <img :src="contact.avatar" alt="" class="contact-picture">
                                 <div class="contact-text flex-grow-1">
                                     <h3 class="contact-name">{{ contact.name }}</h3>
-                                    <p>Ultimo messaggio inviato</p>
+                                    <p>{{ getLastText(index) }}</p>
                                 </div>
-                                <div class="last-text">
-                                    12:00   
-                                </div>
+                                <div class="last-text">{{ getLastTextTime(index) }}</div>
                             </div>
                         </div>
                     </div>
@@ -66,27 +64,20 @@
                             <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </div>
-                        <div class="active-contact-chat flex-grow-1">
-                            <div class="chat-text" v-for="text in contacts[activeContactIndex].messages" :class=" text.status == 'sent' ? 'sent' : 'received' ">
+                        <div class="active-contact-chat flex-grow-1 scroll-bar-y" @click="hideTextInfo()">
+                            <div class="chat-text" v-for="(text, index) in contacts[activeContactIndex].messages" :class=" text.status == 'sent' ? 'sent' : 'received' ">
                                 <span class="text-content">{{ text.message }}</span>
                                 <span class="text-time">{{ text.date }}</span>
+                                <i class="fa-solid fa-chevron-down open-text-info" @click.stop="showTextInfo(index)"></i>
+                                <div class="text-info" v-if="text.textInfoStatus">
+                                    <div>Message Info</div>
+                                    <div class="delete-message" @click="deleteMessage(index)">Delete message</div>
+                                </div>
                             </div>
-                            <!-- <div class="chat-text sent">
-                                <span class="text-content">Hai portato a spasso il cane?</span>
-                                <span class="text-time">15:30</span>
-                            </div>
-                            <div class="chat-text sent">
-                                <span class="text-content">Ricordati di stendere i panni</span>
-                                <span class="text-time">16:50</span>
-                            </div>
-                            <div class="chat-text">
-                                <span class="text-content">Tutto fatto!</span>
-                                <span class="text-time">17:15</span>
-                            </div> -->
                         </div>
                         <div class="send-text-bar">
                             <i class="fa-regular fa-face-smile"></i>
-                            <input type="text" class="flex-grow-1 send-text-input" placeholder="Scrivi un messaggio">
+                            <input type="text" class="flex-grow-1 send-text-input" placeholder="Scrivi un messaggio" v-model="newMessage" @keypress.enter="sendNewMessage()">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
