@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+const { DateTime } = luxon;
 createApp({
     data(){
         return{
@@ -9,19 +10,19 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Ricordati di stendere i panni',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 16:15:22',
+                            date: DateTime.local(2020, 1, 10, 16, 15, 22),
                             message: 'Tutto fatto!',
                             status: 'received',
                             textInfoStatus: false
@@ -34,19 +35,19 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '20/03/2020 16:30:00',
+                            date: DateTime.local(2020, 3, 20, 16, 30, 0),
                             message: 'Ciao come stai?',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '20/03/2020 16:30:55',
+                            date: DateTime.local(2020, 3, 20, 16, 30, 55),
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received',
                             textInfoStatus: false
                         },
                         {
-                            date: '20/03/2020 16:35:00',
+                            date: DateTime.local(2020, 3, 20, 16, 35, 0),
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent',
                             textInfoStatus: false
@@ -59,19 +60,19 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '28/03/2020 10:10:40',
+                            date: DateTime.local(2020, 3, 28, 10, 10, 40),
                             message: 'La Marianna va in campagna',
                             status: 'received',
                             textInfoStatus: false
                         },
                         {
-                            date: '28/03/2020 10:20:10',
+                            date: DateTime.local(2020, 3, 28, 10, 20, 10),
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '28/03/2020 16:15:22',
+                            date: DateTime.local(2020, 3, 28, 16, 15, 22),
                             message: 'Ah scusa!',
                             status: 'received',
                             textInfoStatus: false
@@ -84,13 +85,13 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Si, ma preferirei andare al cinema',
                             status: 'received',
                             textInfoStatus: false
@@ -103,13 +104,13 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Ricordati di chiamare la nonna',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Va bene, stasera la sento',
                             status: 'received',
                             textInfoStatus: false
@@ -122,19 +123,19 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Ciao Claudia, hai novità?',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Non ancora',
                             status: 'received',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:51:00',
+                            date: DateTime.local(2020, 1, 10, 15, 51, 0),
                             message: 'Nessuna nuova, buona nuova',
                             status: 'sent',
                             textInfoStatus: false
@@ -147,13 +148,13 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Fai gli auguri a Martina che è il suo compleanno!',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Grazie per avermelo ricordato, le scrivo subito!',
                             status: 'received',
                             textInfoStatus: false
@@ -166,19 +167,19 @@ createApp({
                     visible: true,
                     messages: [
                         {
-                            date: '10/01/2020 15:30:55',
+                            date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
                             status: 'received',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:50:00',
+                            date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                             status: 'sent',
                             textInfoStatus: false
                         },
                         {
-                            date: '10/01/2020 15:51:00',
+                            date: DateTime.local(2020, 1, 10, 15, 51, 0),
                             message: 'OK!!',
                             status: 'received',
                             textInfoStatus: false
@@ -200,7 +201,7 @@ createApp({
         },
         sendNewMessage() {
             const newText = {
-                date: '01/01/2000 00:00:00',
+                date: DateTime.now(),
                 message: this.newMessage,
                 status: 'sent',
                 textInfoStatus: false
@@ -211,7 +212,7 @@ createApp({
         },
         automaticResponse() {
             const newResponse = {
-                date: '01/01/2000 00:00:00',
+                date: DateTime.now(),
                 message: 'ok',
                 status: 'received',
                 textInfoStatus: false
@@ -240,7 +241,10 @@ createApp({
         },
         getLastTextTime(index) {
             messagesLength = this.contacts[index].messages.length
-            return this.contacts[index].messages[messagesLength - 1].date
+            return this.getTimeFromDate(this.contacts[index].messages[messagesLength - 1].date)
+        },
+        getTimeFromDate(date) {
+            return date.toFormat("HH ':' mm")
         }
     }
 }).mount('#app')
