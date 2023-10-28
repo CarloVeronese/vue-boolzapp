@@ -200,15 +200,17 @@ createApp({
             return word.toLowerCase().trim()
         },
         sendNewMessage() {
-            const newText = {
-                date: DateTime.now(),
-                message: this.newMessage,
-                status: 'sent',
-                textInfoStatus: false
+            if(this.newMessage != ''){
+                    const newText = {
+                        date: DateTime.now(),
+                        message: this.newMessage,
+                        status: 'sent',
+                        textInfoStatus: false
+                    }
+                    this.contacts[this.activeContactIndex].messages.push(newText);
+                    this.newMessage = '';
+                    setTimeout(this.automaticResponse, 1000);
             }
-            this.contacts[this.activeContactIndex].messages.push(newText);
-            this.newMessage = '';
-            setTimeout(this.automaticResponse, 1000);
         },
         automaticResponse() {
             const newResponse = {
