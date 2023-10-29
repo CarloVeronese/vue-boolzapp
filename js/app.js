@@ -222,7 +222,9 @@ createApp({
             this.contacts[this.activeContactIndex].messages.push(newResponse);
         },
         showTextInfo(index) {
-            this.hideTextInfo();
+            if(!this.contacts[this.activeContactIndex].messages[index].textInfoStatus) {
+                this.hideTextInfo();
+            }
             this.contacts[this.activeContactIndex].messages[index].textInfoStatus = !this.contacts[this.activeContactIndex].messages[index].textInfoStatus;
         },
         hideTextInfo() {
