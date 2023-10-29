@@ -240,10 +240,12 @@ createApp({
             this.contacts[this.activeContactIndex].messages.splice(index, 1)
         },
         getLastText(index) {
+            if(this.contacts[index].messages == 0) return ''
             messagesLength = this.contacts[index].messages.length
             return this.contacts[index].messages[messagesLength - 1].message
         },
         getLastTextTime(index) {
+            if(this.contacts[index].messages == 0) return ''
             messagesLength = this.contacts[index].messages.length
             return this.getTimeFromDate(this.contacts[index].messages[messagesLength - 1].date)
         },
