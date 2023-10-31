@@ -13,19 +13,16 @@ createApp({
                             date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Hai portato a spasso il cane?',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Ricordati di stendere i panni',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 16, 15, 22),
                             message: 'Tutto fatto!',
                             status: 'received',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -38,19 +35,16 @@ createApp({
                             date: DateTime.local(2020, 3, 20, 16, 30, 0),
                             message: 'Ciao come stai?',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 3, 20, 16, 30, 55),
                             message: 'Bene grazie! Stasera ci vediamo?',
                             status: 'received',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 3, 20, 16, 35, 0),
                             message: 'Mi piacerebbe ma devo andare a fare la spesa.',
                             status: 'sent',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -63,19 +57,16 @@ createApp({
                             date: DateTime.local(2020, 3, 28, 10, 10, 40),
                             message: 'La Marianna va in campagna',
                             status: 'received',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 3, 28, 10, 20, 10),
                             message: 'Sicuro di non aver sbagliato chat?',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 3, 28, 16, 15, 22),
                             message: 'Ah scusa!',
                             status: 'received',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -88,13 +79,11 @@ createApp({
                             date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Si, ma preferirei andare al cinema',
                             status: 'received',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -107,13 +96,11 @@ createApp({
                             date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Ricordati di chiamare la nonna',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Va bene, stasera la sento',
                             status: 'received',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -126,19 +113,16 @@ createApp({
                             date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Ciao Claudia, hai novità?',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Non ancora',
                             status: 'received',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 51, 0),
                             message: 'Nessuna nuova, buona nuova',
                             status: 'sent',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -151,13 +135,11 @@ createApp({
                             date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Fai gli auguri a Martina che è il suo compleanno!',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'Grazie per avermelo ricordato, le scrivo subito!',
                             status: 'received',
-                            textInfoStatus: false
                         }
                     ],
                 },
@@ -170,31 +152,30 @@ createApp({
                             date: DateTime.local(2020, 1, 10, 15, 30, 55),
                             message: 'Ciao, andiamo a mangiare la pizza stasera?',
                             status: 'received',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 50, 0),
                             message: 'No, l\'ho già mangiata ieri, ordiniamo sushi!',
                             status: 'sent',
-                            textInfoStatus: false
                         },
                         {
                             date: DateTime.local(2020, 1, 10, 15, 51, 0),
                             message: 'OK!!',
                             status: 'received',
-                            textInfoStatus: false
                         }
                     ],
                 }
             ],
             activeContactIndex: 0,
+            activeContactMessageIndex: -1,
             searchString: '',
             newMessage: '',
         }
     },
     methods: {
         changeActiveContact(index) {
-            this.activeContactIndex = index
+            this.activeContactIndex = index;
+            this.activeContactMessageIndex = -1;
         },
         stringLowerCaseAndTrimmed(word){
             return word.toLowerCase().trim()
@@ -205,7 +186,6 @@ createApp({
                         date: DateTime.now(),
                         message: this.newMessage,
                         status: 'sent',
-                        textInfoStatus: false
                     }
                     this.contacts[this.activeContactIndex].messages.push(newText);
                     this.newMessage = '';
@@ -217,24 +197,15 @@ createApp({
                 date: DateTime.now(),
                 message: 'ok',
                 status: 'received',
-                textInfoStatus: false
             }
             this.contacts[this.activeContactIndex].messages.push(newResponse);
         },
         showTextInfo(index) {
-            if(!this.contacts[this.activeContactIndex].messages[index].textInfoStatus) {
-                this.hideTextInfo();
-            }
-            this.contacts[this.activeContactIndex].messages[index].textInfoStatus = !this.contacts[this.activeContactIndex].messages[index].textInfoStatus;
+            if(this.activeContactMessageIndex === index) this.hideTextInfo();
+            else this.activeContactMessageIndex = index
         },
         hideTextInfo() {
-            contactsNumber = this.contacts.length;
-            for(let i = 0; i < contactsNumber; i++) {
-                messagesNumber = this.contacts[i].messages.length
-                for(let j = 0; j < messagesNumber; j++) {
-                    this.contacts[i].messages[j].textInfoStatus = false
-                }
-            }
+            this.activeContactMessageIndex = -1;
         },
         deleteMessage(index) {
             this.contacts[this.activeContactIndex].messages.splice(index, 1)
@@ -250,7 +221,11 @@ createApp({
             return this.getTimeFromDate(this.contacts[index].messages[messagesLength - 1].date)
         },
         getTimeFromDate(date) {
-            return date.toFormat("HH ':' mm")
+            const now = DateTime.now();
+            if (date.toFormat('yyyy LLL dd') == now.toFormat('yyyy LLL dd')){
+                return date.toFormat("HH ':' mm")
+            }
+            return date.toFormat("dd'/'LLL'/'yyyy ' ' HH ':' mm")
         }
     }
 }).mount('#app')

@@ -71,7 +71,7 @@
                                 <span class="text-content">{{ text.message }}</span>
                                 <span class="text-time">{{ getTimeFromDate(text.date) }}</span>
                                 <i class="fa-solid fa-chevron-down open-text-info" @click.stop="showTextInfo(index)"></i>
-                                <div class="text-info" v-if="text.textInfoStatus">
+                                <div class="text-info" v-show="index === activeContactMessageIndex">
                                     <div>Message Info</div>
                                     <div class="delete-message" @click="deleteMessage(index)">Delete message</div>
                                 </div>
